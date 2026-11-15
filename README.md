@@ -44,19 +44,36 @@
 
 | 工具 | 目录 | 显式调用 |
 |---|---|---|
+| DeepSeek Harness（DSH） | `~/.agents/skills/01-saywell/` | `/01-saywell` |
+| WorkBuddy | `~/.workbuddy/skills/01-saywell/` | `/01-saywell` |
 | Codex | `~/.agents/skills/01-saywell/` | `$01-saywell` |
 | Claude Code | `~/.claude/skills/01-saywell/` | `/01-saywell` |
 
+**DSH 与 Codex 共用 `~/.agents/skills/`**，装一次两边都生效。
+
 路径与调用方式参见[Codex文档](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)和[Claude Code文档](https://code.claude.com/docs/en/skills#choose-where-skills-load)。其他支持Agent Skills的工具按各自说明安装，未逐一验证。
 
-macOS/Linux也可以保留仓库位置，用软链接接入。下面以Codex为例，先将占位路径替换为实际路径：
+macOS/Linux 建议保留仓库位置，用软链接接入，这样更新仓库即生效。先把路径换成实际位置：
 
 ```bash
+# DSH / Codex
 mkdir -p "$HOME/.agents/skills"
 ln -s "/你的路径/01-saywell" "$HOME/.agents/skills/01-saywell"
+
+# WorkBuddy
+ln -s "/你的路径/01-saywell" "$HOME/.workbuddy/skills/01-saywell"
+
+# Claude Code
+ln -s "/你的路径/01-saywell" "$HOME/.claude/skills/01-saywell"
 ```
 
-目标已存在时先检查已有安装，不要直接覆盖。安装后新开对话，确认工具能找到该Skill；是否需要重启取决于宿主。
+不想用软链，也可以解压 release 包：
+
+```bash
+unzip 01-saywell-0.0.4.zip -d "$HOME/.agents/skills/01-saywell"
+```
+
+目标已存在时先检查已有安装，不要直接覆盖。**装完新开一个对话**，旧对话不会重新加载；是否需要重启取决于宿主。
 
 不需要额外运行脚本或服务。模型账号与费用由所用工具决定。
 
@@ -67,7 +84,8 @@ ln -s "/你的路径/01-saywell" "$HOME/.agents/skills/01-saywell"
 ```text
 帮我安装一个 Skill：
 仓库 https://github.com/zane01Ai/01-saywell
-按 README 的「安装」一节操作，装到 ~/.agents/skills/01-saywell
+装到 ~/.agents/skills/01-saywell（DSH / Codex）
+另外也在 ~/.workbuddy/skills/01-saywell 建一份（WorkBuddy）
 装完检查 SKILL.md 是否存在，并告诉我是否需要新开对话才生效
 ```
 
@@ -75,35 +93,35 @@ ln -s "/你的路径/01-saywell" "$HOME/.agents/skills/01-saywell"
 
 ## 用法
 
-先完成上面的安装，再复制下面的调用示例。只把调用名粘进聊天框，不会自动安装 Skill。
+先完成上面的安装，再复制下面的调用示例。**只把调用名粘进聊天框，不会自动安装 Skill。**
 
-下面使用Codex调用方式；Claude Code将前缀换成`/01-saywell`。
+下面统一用 `/01-saywell`（DSH、WorkBuddy、Claude Code 都一样）。Codex 把前缀换成 `$01-saywell`。
 
 **改稿**
 
 ```text
-$01-saywell 改下面这段，保留事实和数字，只给成稿。
+/01-saywell 改下面这段，保留事实和数字，只给成稿。
 【原稿】……
 ```
 
 **聊天代写**
 
 ```text
-$01-saywell 帮我回这句话：“项目又推迟了，白忙了两周。”
+/01-saywell 帮我回这句话：“项目又推迟了，白忙了两周。”
 对方是同事，我想表示理解，不用给建议。
 ```
 
 **按材料写**
 
 ```text
-$01-saywell 根据下面材料写一段工具介绍，150字以内。
+/01-saywell 根据下面材料写一段工具介绍，150字以内。
 【材料】……
 ```
 
 **只要建议**
 
 ```text
-$01-saywell 只引用有问题的片段，解释阅读问题，不给替换全文。
+/01-saywell 只引用有问题的片段，解释阅读问题，不给替换全文。
 【原文】……
 ```
 
@@ -122,6 +140,16 @@ $01-saywell 只引用有问题的片段，解释阅读问题，不给替换全�
 **能写英文吗？**
 
 当前规则、示例和评测以中文为主，英文效果尚未专门验证。
+
+**装了但调用不出来？**
+
+按顺序查三处：
+
+1. **目录对不对** —— DSH / Codex 看 `~/.agents/skills/01-saywell/SKILL.md`，WorkBuddy 看 `~/.workbuddy/skills/01-saywell/SKILL.md`，Claude Code 看 `~/.claude/skills/01-saywell/SKILL.md`。文件必须叫 `SKILL.md`，不能被多套一层目录。
+2. **是不是旧对话** —— 装完要**新开一个对话**，旧对话不会重新加载。
+3. **前缀对不对** —— DSH / WorkBuddy / Claude Code 用 `/01-saywell`，Codex 用 `$01-saywell`。
+
+三条都对还是不行，说明宿主的技能发现机制与上表不同，请按该工具自己的文档找技能目录。
 
 ## 效果与已知限制
 
