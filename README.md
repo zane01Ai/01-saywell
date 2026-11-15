@@ -49,11 +49,26 @@
 
 路径与调用方式参见[Codex文档](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)和[Claude Code文档](https://code.claude.com/docs/en/skills#choose-where-skills-load)。其他支持Agent Skills的工具按各自说明安装，未逐一验证。
 
-### 推荐用软链
+### 安装包
 
-`git clone` 到自己习惯的位置，再用软链接接入技能目录。这样改文件、拉更新后立刻生效，不用每次重新复制安装包。
+从 [Releases](https://github.com/zane01Ai/01-saywell/releases) 下载 `01-saywell-x.x.x.zip`，解压到对应目录：
 
-先把下面的路径换成你实际 clone 的位置：
+```bash
+unzip "/下载路径/01-saywell-x.x.x.zip" -d "$HOME/.agents/skills/01-saywell"
+```
+
+其他工具把 `-d` 后面的路径换成上表对应的目录。升级时下载新版本，覆盖解压。
+
+这个包内没有顶层目录，解压完就是 `01-saywell/SKILL.md`。**不要用 GitHub 页面的 "Download ZIP"**——那是源码归档，会多套一层目录，解压后变成 `01-saywell/01-saywell-xxx/SKILL.md`，工具就找不到了。
+
+目标已存在时先检查已有安装，不要直接覆盖。**装完新开一个对话**，旧对话不会重新加载；是否需要重启取决于宿主。
+
+不需要额外运行脚本或服务。模型账号与费用由所用工具决定。
+
+<details>
+<summary>想改源码或跟进更新：用软链</summary>
+
+如果打算自己改规则，或者想跟着仓库更新，可以先 `git clone`，再用软链接接入，这样改完即时生效：
 
 ```bash
 # DSH / Codex
@@ -67,19 +82,9 @@ ln -s "/你的路径/01-saywell" "$HOME/.workbuddy/skills/01-saywell"
 ln -s "/你的路径/01-saywell" "$HOME/.claude/skills/01-saywell"
 ```
 
-### 或者用安装包
+项目目录挪位置后软链会失效，重建即可。
 
-不想用软链，也可以解压下载的技能包。将下面的 ZIP 路径换成实际下载位置：
-
-```bash
-unzip "/下载路径/技能包.zip" -d "$HOME/.agents/skills/01-saywell"
-```
-
-这种方式升级时要重新解压覆盖。
-
-目标已存在时先检查已有安装，不要直接覆盖。**装完新开一个对话**，旧对话不会重新加载；是否需要重启取决于宿主。
-
-不需要额外运行脚本或服务。模型账号与费用由所用工具决定。
+</details>
 
 ### 让 AI 帮你装
 
@@ -88,10 +93,12 @@ unzip "/下载路径/技能包.zip" -d "$HOME/.agents/skills/01-saywell"
 ```text
 帮我安装一个 Skill：
 仓库 https://github.com/zane01Ai/01-saywell
+可以下载最新 release 的技能包，也可以 git clone（我想跟着更新）
 装到 ~/.agents/skills/01-saywell（DSH / Codex）
-另外也在 ~/.workbuddy/skills/01-saywell 建一份（WorkBuddy）
 装完检查 SKILL.md 是否存在，并告诉我是否需要新开对话才生效
 ```
+
+要装到 WorkBuddy 的话，再加一句：`另外在 ~/.workbuddy/skills/01-saywell 也放一份。`
 
 **注意**：这是让 AI 执行通用的文件操作，不是 Skill 自带的能力。安装前建议先看一遍仓库内容，确认它只做「下载文件、放到指定目录」这件事——本 Skill 不需要运行任何脚本或服务。
 
@@ -153,16 +160,13 @@ unzip "/下载路径/技能包.zip" -d "$HOME/.agents/skills/01-saywell"
 
 按顺序查三处：
 
-1. **目录对不对** —— DSH / Codex 看 `~/.agents/skills/01-saywell/SKILL.md`，WorkBuddy 看 `~/.workbuddy/skills/01-saywell/SKILL.md`，Claude Code 看 `~/.claude/skills/01-saywell/SKILL.md`。文件必须叫 `SKILL.md`，不能被多套一层目录。
-
-   用软链的话，再确认链接没断：
+1. **目录对不对** —— DSH / Codex 看 `~/.agents/skills/01-saywell/SKILL.md`，WorkBuddy 看 `~/.workbuddy/skills/01-saywell/SKILL.md`，Claude Code 看 `~/.claude/skills/01-saywell/SKILL.md`。
 
    ```bash
-   ls -l ~/.agents/skills/01-saywell     # 应指向你的 clone 目录
    ls ~/.agents/skills/01-saywell/SKILL.md
    ```
 
-   如果项目目录挪过位置，软链会失效，重建即可。
+   文件必须叫 `SKILL.md`，且不能被多套一层目录（常见错误是解压后变成 `01-saywell/01-saywell/SKILL.md`）。用软链的话，再用 `ls -l` 确认链接没断。
 2. **是不是旧对话** —— 旧对话不会重新加载，要新开一个。
 3. **前缀对不对** —— DSH / WorkBuddy / Claude Code 用 `/01-saywell`，Codex 用 `$01-saywell`。
 
