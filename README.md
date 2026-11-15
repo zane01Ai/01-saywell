@@ -66,7 +66,7 @@ ln -s "/你的路径/01-saywell" "$HOME/.agents/skills/01-saywell"
 
 ```text
 帮我安装一个 Skill：
-仓库 https://github.com/<你的用户名>/01-saywell
+仓库 https://github.com/zane01Ai/01-saywell
 按 README 的「安装」一节操作，装到 ~/.agents/skills/01-saywell
 装完检查 SKILL.md 是否存在，并告诉我是否需要新开对话才生效
 ```
