@@ -49,8 +49,6 @@
 
 路径与调用方式参见[Codex文档](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)和[Claude Code文档](https://code.claude.com/docs/en/skills#choose-where-skills-load)。其他支持Agent Skills的工具按各自说明安装，未逐一验证。
 
-### 安装包
-
 从 [Releases](https://github.com/zane01Ai/01-saywell/releases) 下载 `01-saywell-x.x.x.zip`，解压到对应目录：
 
 ```bash
@@ -65,27 +63,6 @@ unzip "/下载路径/01-saywell-x.x.x.zip" -d "$HOME/.agents/skills/01-saywell"
 
 不需要额外运行脚本或服务。模型账号与费用由所用工具决定。
 
-<details>
-<summary>想改源码或跟进更新：用软链</summary>
-
-如果打算自己改规则，或者想跟着仓库更新，可以先 `git clone`，再用软链接接入，这样改完即时生效：
-
-```bash
-# DSH / Codex
-mkdir -p "$HOME/.agents/skills"
-ln -s "/你的路径/01-saywell" "$HOME/.agents/skills/01-saywell"
-
-# WorkBuddy
-ln -s "/你的路径/01-saywell" "$HOME/.workbuddy/skills/01-saywell"
-
-# Claude Code
-ln -s "/你的路径/01-saywell" "$HOME/.claude/skills/01-saywell"
-```
-
-项目目录挪位置后软链会失效，重建即可。
-
-</details>
-
 ### 让 AI 帮你装
 
 如果用的是能读写文件和联网的编码工具（Codex、Claude Code 等），可以直接把下面这段发给它：
@@ -93,8 +70,7 @@ ln -s "/你的路径/01-saywell" "$HOME/.claude/skills/01-saywell"
 ```text
 帮我安装一个 Skill：
 仓库 https://github.com/zane01Ai/01-saywell
-可以下载最新 release 的技能包，也可以 git clone（我想跟着更新）
-装到 ~/.agents/skills/01-saywell（DSH / Codex）
+从 releases 页下载最新的技能包，解压装到 ~/.agents/skills/01-saywell（DSH / Codex）
 装完检查 SKILL.md 是否存在，并告诉我是否需要新开对话才生效
 ```
 
@@ -166,7 +142,7 @@ ln -s "/你的路径/01-saywell" "$HOME/.claude/skills/01-saywell"
    ls ~/.agents/skills/01-saywell/SKILL.md
    ```
 
-   文件必须叫 `SKILL.md`，且不能被多套一层目录（常见错误是解压后变成 `01-saywell/01-saywell/SKILL.md`）。用软链的话，再用 `ls -l` 确认链接没断。
+   文件必须叫 `SKILL.md`，且不能被多套一层目录（常见错误是解压后变成 `01-saywell/01-saywell/SKILL.md`）。
 2. **是不是旧对话** —— 旧对话不会重新加载，要新开一个。
 3. **前缀对不对** —— DSH / WorkBuddy / Claude Code 用 `/01-saywell`，Codex 用 `$01-saywell`。
 
