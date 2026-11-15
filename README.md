@@ -57,8 +57,6 @@ unzip "/下载路径/01-saywell-x.x.x.zip" -d "$HOME/.agents/skills/01-saywell"
 
 其他工具把 `-d` 后面的路径换成上表对应的目录。升级时下载新版本，覆盖解压。
 
-这个包内没有顶层目录，解压完就是 `01-saywell/SKILL.md`。**不要用 GitHub 页面的 "Download ZIP"**——那是源码归档，会多套一层目录，解压后变成 `01-saywell/01-saywell-xxx/SKILL.md`，工具就找不到了。
-
 目标已存在时先检查已有安装，不要直接覆盖。**装完新开一个对话**，旧对话不会重新加载；是否需要重启取决于宿主。
 
 不需要额外运行脚本或服务。模型账号与费用由所用工具决定。
@@ -142,7 +140,7 @@ unzip "/下载路径/01-saywell-x.x.x.zip" -d "$HOME/.agents/skills/01-saywell"
    ls ~/.agents/skills/01-saywell/SKILL.md
    ```
 
-   文件必须叫 `SKILL.md`，且不能被多套一层目录（常见错误是解压后变成 `01-saywell/01-saywell/SKILL.md`）。
+   必须能看到 `SKILL.md`，且不要多套一层目录。
 2. **是不是旧对话** —— 旧对话不会重新加载，要新开一个。
 3. **前缀对不对** —— DSH / WorkBuddy / Claude Code 用 `/01-saywell`，Codex 用 `$01-saywell`。
 
