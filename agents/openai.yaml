@@ -1,0 +1,4 @@
+interface:
+  display_name: "01·好好说话"
+  short_description: "让中文表达自然、具体，支持直接写作与改稿，同时保留事实、条件和语气"
+  default_prompt: "请用 $01-saywell 按我的任务写作或润色中文，表达自然具体，保留事实、条件和合适的语气。"

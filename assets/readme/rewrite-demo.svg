@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="870" viewBox="0 0 1440 870" role="img" aria-labelledby="title desc">
+<title id="title">01·好好说话：语文批改风格示例</title>
+<desc id="desc">用红色删除符号删去开场和重复；用插入号补入试用离线版，并将目前移动到原因之后。下方为改后示例。</desc>
+<style>text{font-family:'Hiragino Sans GB','PingFang SC','Microsoft YaHei',sans-serif}.note{fill:#B64037;font-size:26px;font-family:'Kaiti SC','STKaiti','Hiragino Sans GB',serif}.pen{fill:none;stroke:#B64037;stroke-width:2.8;stroke-linecap:round;stroke-linejoin:round}</style>
+<rect width="1440" height="870" fill="#F7F4ED"/>
+<rect width="1440" height="5" fill="#B64037"/>
+<text x="64" y="61" font-size="24" font-weight="600" fill="#172A32">01·好好说话</text>
+<text x="1376" y="61" text-anchor="end" font-size="20" fill="#798184">改稿示例  /  工作同步</text>
+<g transform="translate(0 -79)">
+<text x="64" y="191" font-size="23" fill="#657173">请求：去掉预告和重复，保留所有事实、限制和我的判断，只给成稿。</text>
+<path d="M64 226H1376" stroke="#D1D7D5" stroke-width="1.4"/>
+<text x="64" y="279" font-size="21" fill="#798184">批改稿</text>
+<text data-role="input" x="160" y="340" font-size="38" fill="#172A32">下面简单介绍一下离线版的试用情况。</text>
+<text data-role="input" x="160" y="430" font-size="38" fill="#172A32">这次测了12份文档，9份成功导出。</text>
+<text data-role="input" x="160" y="530" font-size="38" fill="#172A32">换句话说，有9份文档导出了。</text>
+<text data-role="input" x="160" y="620" font-size="38" fill="#172A32">目前另外3份失败的原因还没确认，</text>
+<text data-role="input" x="160" y="720" font-size="38" fill="#172A32">我暂时不建议全组切换。</text>
+<path class="pen" d="M157 328 Q450.7 323 811.0 329 M797.0 316 q24 -17 30 0 q-7 17 -25 7"/>
+<path class="pen" d="M157 518 Q393.55 513 684.0 519 M670.0 506 q24 -17 30 0 q-7 17 -25 7"/>
+<path class="pen" d="M157 608 Q194.2 603 241.0 609 M227.0 596 q24 -17 30 0 q-7 17 -25 7"/>
+<text x="1034" y="333" class="note" transform="rotate(-3 1034 333)">开头直接说事</text>
+<path class="pen" stroke-width="1.8" d="M1001 330q-59 -10 -112 1"/>
+<text x="1034" y="525" class="note" transform="rotate(-2 1034 525)">这里重复了</text>
+<path class="pen" stroke-width="1.8" d="M1000 519q-140 -12 -245 1"/>
+<text x="1034" y="714" class="note" transform="rotate(-3 1034 714)">这个判断留着</text>
+<path class="pen" d="M164 733q200 5 408 -1 M958 709l10 12 22 -31"/>
+<path class="pen" d="M226.0 452L236.0 435L246.0 452 M236.0 437Q249.0 457 263.0 464"/>
+<text x="270.0" y="479" class="note" transform="rotate(-2 270.0 479)">试用离线版，</text>
+<path class="pen" d="M555.0 642L565.0 625L575.0 642 M565.0 627Q578.0 647 592.0 654"/>
+<text x="599.0" y="669" class="note" transform="rotate(-2 599.0 669)">目前</text>
+<text x="1034" y="619" class="note" transform="rotate(-2 1034 619)">挪一下位置</text>
+<path d="M64 774H1376" stroke="#D1D7D5" stroke-width="1.4"/>
+<text x="64" y="828" font-size="21" fill="#296A57">改后</text>
+<text data-role="output" x="160" y="839" font-size="32" fill="#172A32">这次试用离线版，测了12份文档，9份成功导出。</text>
+<text data-role="output" x="160" y="900" font-size="32" fill="#172A32">另外3份失败的原因目前还没确认，我暂时不建议全组切换。</text>
+</g>
+</svg>

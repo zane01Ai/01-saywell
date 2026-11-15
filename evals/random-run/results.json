@@ -1,0 +1,589 @@
+{
+  "schema_version": 1,
+  "audited_on": "2026-11-14",
+  "method": "模型A/B偏好对照，判读模型不知道分组；不是人类评审或双盲实验。",
+  "sample_count": 40,
+  "unique_source_urls": 24,
+  "reported_before_counts": {
+    "A": 13,
+    "B": 25,
+    "tie": 2
+  },
+  "phases": {
+    "before": {
+      "counts": {
+        "B": 26,
+        "tie": 2,
+        "A": 12
+      },
+      "by_category": {
+        "工具或产品介绍": {
+          "B": 3,
+          "tie": 1,
+          "A": 1
+        },
+        "工作沟通": {
+          "A": 3,
+          "B": 1,
+          "tie": 1
+        },
+        "观点评论": {
+          "B": 4,
+          "A": 1
+        },
+        "平台文案": {
+          "B": 5
+        },
+        "服务与客服话术": {
+          "A": 4,
+          "B": 1
+        },
+        "方案与总结类": {
+          "A": 3,
+          "B": 2
+        },
+        "学习与知识类": {
+          "B": 5
+        },
+        "求职与个人介绍": {
+          "B": 5
+        }
+      },
+      "decisions": [
+        {
+          "id": "01",
+          "category": "工具或产品介绍",
+          "blind_choice": "版本一",
+          "preferred_group": "B"
+        },
+        {
+          "id": "02",
+          "category": "工具或产品介绍",
+          "blind_choice": "版本一",
+          "preferred_group": "B"
+        },
+        {
+          "id": "03",
+          "category": "工具或产品介绍",
+          "blind_choice": "版本一",
+          "preferred_group": "B"
+        },
+        {
+          "id": "04",
+          "category": "工具或产品介绍",
+          "blind_choice": "难以区分",
+          "preferred_group": "tie"
+        },
+        {
+          "id": "05",
+          "category": "工具或产品介绍",
+          "blind_choice": "版本二",
+          "preferred_group": "A"
+        },
+        {
+          "id": "06",
+          "category": "工作沟通",
+          "blind_choice": "版本一",
+          "preferred_group": "A"
+        },
+        {
+          "id": "07",
+          "category": "工作沟通",
+          "blind_choice": "版本二",
+          "preferred_group": "A"
+        },
+        {
+          "id": "08",
+          "category": "工作沟通",
+          "blind_choice": "版本一",
+          "preferred_group": "B"
+        },
+        {
+          "id": "09",
+          "category": "工作沟通",
+          "blind_choice": "难以区分",
+          "preferred_group": "tie"
+        },
+        {
+          "id": "10",
+          "category": "工作沟通",
+          "blind_choice": "版本二",
+          "preferred_group": "A"
+        },
+        {
+          "id": "11",
+          "category": "观点评论",
+          "blind_choice": "版本二",
+          "preferred_group": "B"
+        },
+        {
+          "id": "12",
+          "category": "观点评论",
+          "blind_choice": "版本二",
+          "preferred_group": "A"
+        },
+        {
+          "id": "13",
+          "category": "观点评论",
+          "blind_choice": "版本一",
+          "preferred_group": "B"
+        },
+        {
+          "id": "14",
+          "category": "观点评论",
+          "blind_choice": "版本二",
+          "preferred_group": "B"
+        },
+        {
+          "id": "15",
+          "category": "观点评论",
+          "blind_choice": "版本一",
+          "preferred_group": "B"
+        },
+        {
+          "id": "16",
+          "category": "平台文案",
+          "blind_choice": "版本二",
+          "preferred_group": "B"
+        },
+        {
+          "id": "17",
+          "category": "平台文案",
+          "blind_choice": "版本二",
+          "preferred_group": "B"
+        },
+        {
+          "id": "18",
+          "category": "平台文案",
+          "blind_choice": "版本一",
+          "preferred_group": "B"
+        },
+        {
+          "id": "19",
+          "category": "平台文案",
+          "blind_choice": "版本二",
+          "preferred_group": "B"
+        },
+        {
+          "id": "20",
+          "category": "平台文案",
+          "blind_choice": "版本二",
+          "preferred_group": "B"
+        },
+        {
+          "id": "31",
+          "category": "服务与客服话术",
+          "blind_choice": "版本一",
+          "preferred_group": "A"
+        },
+        {
+          "id": "32",
+          "category": "服务与客服话术",
+          "blind_choice": "版本一",
+          "preferred_group": "A"
+        },
+        {
+          "id": "33",
+          "category": "服务与客服话术",
+          "blind_choice": "版本二",
+          "preferred_group": "B"
+        },
+        {
+          "id": "34",
+          "category": "服务与客服话术",
+          "blind_choice": "版本一",
+          "preferred_group": "A"
+        },
+        {
+          "id": "35",
+          "category": "服务与客服话术",
+          "blind_choice": "版本一",
+          "preferred_group": "A"
+        },
+        {
+          "id": "36",
+          "category": "方案与总结类",
+          "blind_choice": "版本二",
+          "preferred_group": "A"
+        },
+        {
+          "id": "37",
+          "category": "方案与总结类",
+          "blind_choice": "版本一",
+          "preferred_group": "A"
+        },
+        {
+          "id": "38",
+          "category": "方案与总结类",
+          "blind_choice": "版本二",
+          "preferred_group": "B"
+        },
+        {
+          "id": "39",
+          "category": "方案与总结类",
+          "blind_choice": "版本二",
+          "preferred_group": "B"
+        },
+        {
+          "id": "40",
+          "category": "方案与总结类",
+          "blind_choice": "版本一",
+          "preferred_group": "A"
+        },
+        {
+          "id": "21",
+          "category": "学习与知识类",
+          "blind_choice": "版本二",
+          "preferred_group": "B"
+        },
+        {
+          "id": "22",
+          "category": "学习与知识类",
+          "blind_choice": "版本一",
+          "preferred_group": "B"
+        },
+        {
+          "id": "23",
+          "category": "学习与知识类",
+          "blind_choice": "版本二",
+          "preferred_group": "B"
+        },
+        {
+          "id": "24",
+          "category": "学习与知识类",
+          "blind_choice": "版本二",
+          "preferred_group": "B"
+        },
+        {
+          "id": "25",
+          "category": "学习与知识类",
+          "blind_choice": "版本二",
+          "preferred_group": "B"
+        },
+        {
+          "id": "26",
+          "category": "求职与个人介绍",
+          "blind_choice": "版本二",
+          "preferred_group": "B"
+        },
+        {
+          "id": "27",
+          "category": "求职与个人介绍",
+          "blind_choice": "版本一",
+          "preferred_group": "B"
+        },
+        {
+          "id": "28",
+          "category": "求职与个人介绍",
+          "blind_choice": "版本一",
+          "preferred_group": "B"
+        },
+        {
+          "id": "29",
+          "category": "求职与个人介绍",
+          "blind_choice": "版本一",
+          "preferred_group": "B"
+        },
+        {
+          "id": "30",
+          "category": "求职与个人介绍",
+          "blind_choice": "版本二",
+          "preferred_group": "B"
+        }
+      ],
+      "answer_key_sha256": "dc427717c2f8828ef93d248df5db047b766cf1a559b26f591a9411ef83b865a7",
+      "verdict_sha256": "48e9370653358a5d9ac44f945f90629c42ca2166c18c96c48ab23d03fa8f4fe3",
+      "shuffle_note": "固定种子20261113可重建原分组。",
+      "phase_label": "首次对照"
+    },
+    "after": {
+      "counts": {
+        "A": 20,
+        "B": 18,
+        "tie": 2
+      },
+      "by_category": {
+        "工具或产品介绍": {
+          "A": 3,
+          "B": 2
+        },
+        "工作沟通": {
+          "A": 2,
+          "B": 3
+        },
+        "观点评论": {
+          "A": 3,
+          "B": 2
+        },
+        "平台文案": {
+          "B": 3,
+          "tie": 1,
+          "A": 1
+        },
+        "学习与知识类": {
+          "B": 2,
+          "A": 2,
+          "tie": 1
+        },
+        "求职与个人介绍": {
+          "A": 3,
+          "B": 2
+        },
+        "服务与客服话术": {
+          "A": 4,
+          "B": 1
+        },
+        "方案与总结类": {
+          "B": 3,
+          "A": 2
+        }
+      },
+      "decisions": [
+        {
+          "id": "01",
+          "category": "工具或产品介绍",
+          "blind_choice": "甲",
+          "preferred_group": "A"
+        },
+        {
+          "id": "02",
+          "category": "工具或产品介绍",
+          "blind_choice": "甲",
+          "preferred_group": "B"
+        },
+        {
+          "id": "03",
+          "category": "工具或产品介绍",
+          "blind_choice": "甲",
+          "preferred_group": "A"
+        },
+        {
+          "id": "04",
+          "category": "工具或产品介绍",
+          "blind_choice": "甲",
+          "preferred_group": "A"
+        },
+        {
+          "id": "05",
+          "category": "工具或产品介绍",
+          "blind_choice": "乙",
+          "preferred_group": "B"
+        },
+        {
+          "id": "06",
+          "category": "工作沟通",
+          "blind_choice": "乙",
+          "preferred_group": "A"
+        },
+        {
+          "id": "07",
+          "category": "工作沟通",
+          "blind_choice": "甲",
+          "preferred_group": "A"
+        },
+        {
+          "id": "08",
+          "category": "工作沟通",
+          "blind_choice": "乙",
+          "preferred_group": "B"
+        },
+        {
+          "id": "09",
+          "category": "工作沟通",
+          "blind_choice": "乙",
+          "preferred_group": "B"
+        },
+        {
+          "id": "10",
+          "category": "工作沟通",
+          "blind_choice": "乙",
+          "preferred_group": "B"
+        },
+        {
+          "id": "11",
+          "category": "观点评论",
+          "blind_choice": "甲",
+          "preferred_group": "A"
+        },
+        {
+          "id": "12",
+          "category": "观点评论",
+          "blind_choice": "甲",
+          "preferred_group": "A"
+        },
+        {
+          "id": "13",
+          "category": "观点评论",
+          "blind_choice": "乙",
+          "preferred_group": "A"
+        },
+        {
+          "id": "14",
+          "category": "观点评论",
+          "blind_choice": "乙",
+          "preferred_group": "B"
+        },
+        {
+          "id": "15",
+          "category": "观点评论",
+          "blind_choice": "乙",
+          "preferred_group": "B"
+        },
+        {
+          "id": "16",
+          "category": "平台文案",
+          "blind_choice": "甲",
+          "preferred_group": "B"
+        },
+        {
+          "id": "17",
+          "category": "平台文案",
+          "blind_choice": "乙",
+          "preferred_group": "B"
+        },
+        {
+          "id": "18",
+          "category": "平台文案",
+          "blind_choice": "难以区分",
+          "preferred_group": "tie"
+        },
+        {
+          "id": "19",
+          "category": "平台文案",
+          "blind_choice": "甲",
+          "preferred_group": "A"
+        },
+        {
+          "id": "20",
+          "category": "平台文案",
+          "blind_choice": "甲",
+          "preferred_group": "B"
+        },
+        {
+          "id": "21",
+          "category": "学习与知识类",
+          "blind_choice": "甲",
+          "preferred_group": "B"
+        },
+        {
+          "id": "22",
+          "category": "学习与知识类",
+          "blind_choice": "甲",
+          "preferred_group": "A"
+        },
+        {
+          "id": "23",
+          "category": "学习与知识类",
+          "blind_choice": "甲",
+          "preferred_group": "B"
+        },
+        {
+          "id": "24",
+          "category": "学习与知识类",
+          "blind_choice": "难以区分",
+          "preferred_group": "tie"
+        },
+        {
+          "id": "25",
+          "category": "学习与知识类",
+          "blind_choice": "甲",
+          "preferred_group": "A"
+        },
+        {
+          "id": "26",
+          "category": "求职与个人介绍",
+          "blind_choice": "甲",
+          "preferred_group": "A"
+        },
+        {
+          "id": "27",
+          "category": "求职与个人介绍",
+          "blind_choice": "甲",
+          "preferred_group": "B"
+        },
+        {
+          "id": "28",
+          "category": "求职与个人介绍",
+          "blind_choice": "甲",
+          "preferred_group": "A"
+        },
+        {
+          "id": "29",
+          "category": "求职与个人介绍",
+          "blind_choice": "乙",
+          "preferred_group": "B"
+        },
+        {
+          "id": "30",
+          "category": "求职与个人介绍",
+          "blind_choice": "甲",
+          "preferred_group": "A"
+        },
+        {
+          "id": "31",
+          "category": "服务与客服话术",
+          "blind_choice": "乙",
+          "preferred_group": "A"
+        },
+        {
+          "id": "32",
+          "category": "服务与客服话术",
+          "blind_choice": "甲",
+          "preferred_group": "A"
+        },
+        {
+          "id": "33",
+          "category": "服务与客服话术",
+          "blind_choice": "甲",
+          "preferred_group": "A"
+        },
+        {
+          "id": "34",
+          "category": "服务与客服话术",
+          "blind_choice": "乙",
+          "preferred_group": "A"
+        },
+        {
+          "id": "35",
+          "category": "服务与客服话术",
+          "blind_choice": "甲",
+          "preferred_group": "B"
+        },
+        {
+          "id": "36",
+          "category": "方案与总结类",
+          "blind_choice": "乙",
+          "preferred_group": "B"
+        },
+        {
+          "id": "37",
+          "category": "方案与总结类",
+          "blind_choice": "甲",
+          "preferred_group": "B"
+        },
+        {
+          "id": "38",
+          "category": "方案与总结类",
+          "blind_choice": "甲",
+          "preferred_group": "A"
+        },
+        {
+          "id": "39",
+          "category": "方案与总结类",
+          "blind_choice": "乙",
+          "preferred_group": "A"
+        },
+        {
+          "id": "40",
+          "category": "方案与总结类",
+          "blind_choice": "甲",
+          "preferred_group": "B"
+        }
+      ],
+      "answer_key_sha256": "a2609d9430d17994c1115b28b94a4b8d2a386ee62ac8a5cac73631256484796c",
+      "verdict_sha256": "60adb515c138a1b0e3cea40d384713af676b136b571ed2c14018dd0b38840a61",
+      "shuffle_note": "现存脚本与记录无法确认该轮原始随机种子；不能声称可重建原始打乱顺序。",
+      "phase_label": "调整规则后复测"
+    }
+  }
+}

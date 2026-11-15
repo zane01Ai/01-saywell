@@ -1,0 +1,15 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.zip
+.env
+.env.*
+!.env.example
+/private/
+/local-evals/
+/evals/random-run/raw-samples.md
+/evals/random-run/samples.json
+/evals/random-run/before/
+/evals/random-run/after/
+**/blind-package.md
+**/answer-key.json
