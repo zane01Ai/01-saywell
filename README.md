@@ -10,7 +10,7 @@
 
 红笔标出删改，插入号标出补字或移入的位置，旁批说明改动原因；下方是完整改稿。
 
-> **这两个示例是改写思路展示，不是当前版本的实测结果。** 材料为虚构，改法由人工整理，用来说明「删什么、留什么」的判断方式。真实效果请以 [`evals/VERIFICATION.md`](evals/VERIFICATION.md) 的记录为准。
+> **图中示例是改写思路展示，不是当前版本的实测结果。** 材料为虚构，改法由人工整理，用来说明「删什么、留什么」的判断方式。验证范围与结果见[验证摘要](evals/VERIFICATION.md)。
 
 <details>
 <summary>查看可复制的示例文字</summary>
@@ -53,7 +53,11 @@
 
 路径与调用方式参见[Codex文档](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)和[Claude Code文档](https://code.claude.com/docs/en/skills#choose-where-skills-load)。其他支持Agent Skills的工具按各自说明安装，未逐一验证。
 
-macOS/Linux 建议保留仓库位置，用软链接接入，这样更新仓库即生效。先把路径换成实际位置：
+### 推荐用软链
+
+`git clone` 到自己习惯的位置，再用软链接接入技能目录。这样改文件、拉更新后立刻生效，不用每次重新复制安装包。
+
+先把下面的路径换成你实际 clone 的位置：
 
 ```bash
 # DSH / Codex
@@ -67,11 +71,15 @@ ln -s "/你的路径/01-saywell" "$HOME/.workbuddy/skills/01-saywell"
 ln -s "/你的路径/01-saywell" "$HOME/.claude/skills/01-saywell"
 ```
 
-不想用软链，也可以解压 release 包：
+### 或者用安装包
+
+不想用软链，也可以解压 release 包（适合只想用、不打算改的情况）：
 
 ```bash
 unzip 01-saywell-0.0.4.zip -d "$HOME/.agents/skills/01-saywell"
 ```
+
+这种方式升级时要重新解压覆盖。
 
 目标已存在时先检查已有安装，不要直接覆盖。**装完新开一个对话**，旧对话不会重新加载；是否需要重启取决于宿主。
 
@@ -146,6 +154,15 @@ unzip 01-saywell-0.0.4.zip -d "$HOME/.agents/skills/01-saywell"
 按顺序查三处：
 
 1. **目录对不对** —— DSH / Codex 看 `~/.agents/skills/01-saywell/SKILL.md`，WorkBuddy 看 `~/.workbuddy/skills/01-saywell/SKILL.md`，Claude Code 看 `~/.claude/skills/01-saywell/SKILL.md`。文件必须叫 `SKILL.md`，不能被多套一层目录。
+
+   用软链的话，再确认链接没断：
+
+   ```bash
+   ls -l ~/.agents/skills/01-saywell     # 应指向你的 clone 目录
+   ls ~/.agents/skills/01-saywell/SKILL.md
+   ```
+
+   如果项目目录挪过位置，软链会失效，重建即可。
 2. **是不是旧对话** —— 装完要**新开一个对话**，旧对话不会重新加载。
 3. **前缀对不对** —— DSH / WorkBuddy / Claude Code 用 `/01-saywell`，Codex 用 `$01-saywell`。
 
@@ -153,27 +170,20 @@ unzip 01-saywell-0.0.4.zip -d "$HOME/.agents/skills/01-saywell"
 
 ## 效果与已知限制
 
-用40段中文做过小样本对照，覆盖8类常见写作场景。同一段原文分别在加载和不加载Skill的情况下改写，再交给不知道分组的模型比较。改写和评审均由模型完成。
+当前 0.0.4 已做过定向试用，检查主体与陈述状态、要求力度、经历与功能边界，以及文字是否改得更顺。已保存的部分用例中，改换主体、虚构见证经历和削弱要求等问题未再出现。
 
-最近一轮记录的结果：
+复核也发现了仍需注意的情况：回复中可能加入用户没要的劝说或跟进承诺，补词可能让操作含义变得不明确。单次用例没有出错，不代表每次都能做到。
 
-| 更偏好加载Skill的改稿 | 更偏好不加载Skill的改稿 | 难以区分 |
-|---:|---:|---:|
-| 20 | 18 | 2 |
+目前仍是试用版：干净会话中的完整回归、跨模型和英文效果尚未完成验证；入口加载与参考文件分流也有待在隔离环境中分别检查。实际效果会随模型、原稿和要求变化，改完仍建议自己通读。
 
-两组结果接近，还不足以证明Skill普遍优于直接让模型改写。测试后规则仍有调整，当前版本尚未完成新一轮完整对照。
+当前检查范围、发现的问题和验证边界见[验证摘要](evals/VERIFICATION.md)。
 
-主要限制：
+<details>
+<summary>查看较早版本的模型对照记录</summary>
 
-- 40段来自24个不同URL，来源不独立；每类仅5段。
-- 只有一个判读模型，模型与生成参数未完整记录；判读标准也有波动。
-- 调整规则后B组沿用第一轮输出，采样过程存在补采，未完全遵守原协议。
-- 平台文案仍表现偏弱，笔误修正、拆句与公文格式保护需要更多验证。
-- 分流机制（读入口后是否跳过参考文件）只在非隔离环境中观察过，干净会话中的表现待验证。
+此前用40段中文做过加载与不加载Skill的模型偏好对照，两组结果接近。这些数据早于当前规则，不能作为0.0.4的效果成绩，也不证明普遍优于直接让模型改写。方法、数字与局限保留在[历史评测记录](evals/random-run/RESULT.md)。
 
-前后两轮的方法、逐题分组偏好和局限见[评测记录](evals/random-run/RESULT.md)。
-
-改稿后仍需自己通读。模型偏好不等于作者或目标读者认可，也不等于检测器准确率。
+</details>
 
 ## 目录
 
