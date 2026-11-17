@@ -1,4 +1,4 @@
-# 01·好好说话
+# 01.好好说话
 
 中文表达 Skill，帮你写回复、按材料写稿、修改已有文字。保留事实和原意，按场景调整表达，不把所有稿子改成同一种口吻。
 
@@ -157,14 +157,19 @@ unzip "/下载路径/01-saywell-x.x.x.zip" -d "$HOME/.agents/skills/01-saywell"
 ├── docs/                    使用说明
 ├── evals/                   固定回归、教学示例与评测记录
 ├── references/              按需读取的 4 份场景参考
-├── tests/                   评测工具的本地检查
+├── scripts/validate.py      多宿主结构检查
+├── tests/                   盲测工具的自测
 ├── LICENSE                  Apache-2.0
 └── README.md
 ```
 
-运行本地工具检查（Python 3，无第三方依赖）：
+运行本地检查（Python 3，需要 PyYAML）：
 
 ```bash
+# 结构与字段检查
+python3 scripts/validate.py .
+
+# 盲测工具的自测
 python3 -m unittest discover -s tests -v
 ```
 
