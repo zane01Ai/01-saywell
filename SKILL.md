@@ -5,7 +5,16 @@ display_name_en: "01.SayWell"
 description: 在用户明确要求中文去AI味、说文字有明显AI腔、或点名使用「01.好好说话」时使用，也用于用户点名调用后的聊天代写、简短答疑、按材料写作与保留原意的改稿。普通润色、普通写作、翻译、校对错别字、仅调排版或结构、纯格式操作不自动套用。
 description_zh: "好好说话 Skill：拒绝空话套话、不乱脑补结论、不擅自增减关键数字与限定条件。可直接用来写工作消息、简短应答、依据素材撰稿、润色已有文稿，表达清楚顺畅，语气贴合你的意图和实际场景。"
 description_en: "Skill for authentic Chinese writing. It polishes wording faithfully without adding assumptions or extra conclusions. Supports reply drafting, Q&A, writing from source materials and manuscript revision."
+examples_zh:
+  - "帮我把这段工作消息改顺，保留数字和条件，只给成稿。【原文】……"
+  - "帮我回这句话：“项目又推迟了，白熬了两周。”对方是同事，我想表示理解，不用给建议。"
+  - "根据这份材料写一段工具介绍，150字以内，只给正文。【材料】……"
+examples_en:
+  - "Polish this work message, keep the numbers and conditions, output the revised text only."
+  - "Help me reply: 'The project got delayed again, two weeks wasted.' Coworker, just show I understand, no advice."
+  - "Write a 150-character tool introduction from this material. Body text only."
 version: "0.0.5"
+author: "章零一"
 license: Apache-2.0
 visibility: "public"
 metadata:

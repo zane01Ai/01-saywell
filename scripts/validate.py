@@ -41,6 +41,12 @@ def check(root):
     if not ver:
         problems.append("缺少版本号（version 或 metadata.version）")
 
+    # WorkBuddy 市场的必填项（缺失只提示，不阻断其他宿主）
+    wb_required = ("display_name", "display_name_en", "description_zh", "description_en", "author")
+    missing_wb = [k for k in wb_required if not fm.get(k)]
+    if missing_wb:
+        notes.append(f"WorkBuddy 市场必填项缺失: {', '.join(missing_wb)}")
+
     # 引用的 references 是否存在
     for ref in re.findall(r"\]\((references/[^)#]+)", text):
         if not (root / ref).exists():
@@ -48,7 +54,8 @@ def check(root):
 
     # 扩展字段提示（不影响通过）
     extra = set(fm) - {"name","description","license","allowed-tools","metadata",
-                       "display_name","display_name_en","description_zh","description_en","version","visibility"}
+                       "display_name","display_name_en","description_zh","description_en",
+                       "version","visibility","author","examples_zh","examples_en"}
     if extra:
         notes.append(f"未识别的扩展字段: {', '.join(sorted(extra))}")
 
